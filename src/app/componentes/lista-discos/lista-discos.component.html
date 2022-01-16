@@ -1,0 +1,39 @@
+<div class="container	content">
+    <div class="row">
+        <div class="col-md-6	offset-md-3">
+            <span class="anchor" id="formLogin"></span>
+            <!-- form	card	login	with	validation	feedback	-->
+            <div class="card	card-outline-secondary">
+                <div class="card-header">
+                    <h3 class="mb-0">Agregar disco a la colección</h3>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="titulo">Titulo</label>
+                            <input type="text" class="form-control" id="titulo" placeholder="Ingresar titulo..." #titulo>
+                        </div>
+                        <div class="form-group">
+                            <label for="artista">Artista</label>
+                            <input type="text" class="form-control" id="artista" placeholder="Ingresar artista..." #artista>
+                        </div>
+                        <div class="form-group">
+                            <label for="fecha">Fecha de lanzamiento</label>
+                            <input type="text" class="form-control" id="fecha" placeholder="Ingresar fecha..." #fecha>
+                        </div>
+                        <div class="form-group">
+                            <label for="Imagen	Url">Imagen Url</label>
+                            <input type="text" class="form-control" id="imagenUrl" placeholder="Ingresar url imagen..." #url>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-success" (click)="agregarDisco(titulo.value, artista.value, fecha.value, url.value)">Agregar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="mb-5">
+    <div class="row row-flex">
+        <app-disco *ngFor="let disco of listaDiscos" [disco]="disco"></app-disco>
+    </div>
+</div>
